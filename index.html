@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beads & Blooms | Handmade with Love</title>
+<meta name="description" content="Discover beautiful handcrafted beaded bags at Beads & Blooms.">
+<style>
+:root {
+  --plum:#713653;
+  --cream:#fffaf5;
+  --pink:#f3e6ed;
+  --gold:#b99158;
+  --ink:#30232b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font:inherit}
+.announcement{text-align:center;background:var(--plum);color:white;padding:9px;font-size:11px;letter-spacing:1px}
+header{display:flex;align-items:center;justify-content:space-between;padding:17px 6%;background:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #00000008}
+.logo{font-family:Georgia,serif;font-size:23px;color:var(--plum);font-weight:bold}
+.logo small{display:block;font:9px Arial,sans-serif;letter-spacing:3px;text-align:center;margin-top:4px}
+nav{display:flex;gap:24px;font-size:13px}
+nav a:hover{color:var(--plum)}
+.cart-btn,.primary{border:0;background:var(--plum);color:white;padding:12px 17px;border-radius:3px}
+.hero{padding:65px 8%;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(130deg,#fbf0f4,#fffaf5)}
+.eyebrow{color:var(--plum);font-size:11px;letter-spacing:3px;font-weight:bold}
+h1,h2{font-family:Georgia,serif;font-weight:normal}
+h1{font-size:clamp(40px,5vw,64px);line-height:1.12;margin:20px 0}
+h1 em,h2 em{color:var(--plum)}
+.hero p,.story p,.contact p{color:#756771;line-height:1.9;font-size:14px}
+.hero .primary{display:inline-block;margin-top:24px}
+.hero-img{width:100%;height:410px;object-fit:cover;border-radius:160px 160px 5px 5px}
+.section{padding:75px 7%}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2,.story h2,.contact h2{font-size:clamp(30px,4vw,43px);margin-top:12px}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filter{background:white;border:1px solid #e6d6df;padding:9px 15px;border-radius:25px;font-size:12px}
+.filter.active{background:var(--plum);color:white}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.card{background:white;padding-bottom:16px;box-shadow:0 4px 18px #3c20300a}
+.card img{width:100%;height:260px;object-fit:cover;background:var(--pink)}
+.card-info{padding:13px}
+.card h3{font:18px Georgia,serif;margin:6px 0}
+.category{font-size:10px;letter-spacing:1px;color:#8b7883;text-transform:uppercase}
+.price-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}
+.price{font-weight:bold;color:var(--plum)}
+.add{border:0;background:var(--plum);color:white;padding:9px 12px;font-size:12px}
+.story{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;background:#f5eaf0;padding:70px 9%}
+.story img{width:100%;height:350px;object-fit:cover}
+.story p{margin:18px 0}
+.contact{text-align:center;padding:65px 8%}
+.contact p{max-width:500px;margin:15px auto 22px}
+footer{background:#30212b;color:white;text-align:center;padding:35px 15px}
+footer p{font:italic 14px Georgia,serif;margin:12px}
+footer a{color:#edc9dc}
+footer small{display:block;color:#d2bdc8;margin-top:20px;font-size:11px}
+.cart-panel{position:fixed;right:-450px;top:0;width:min(420px,100%);height:100dvh;background:white;z-index:30;padding:24px;box-shadow:-5px 0 30px #0002;transition:right .25s;overflow:auto}
+.cart-panel.open{right:0}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:15px}
+.close{background:none;border:0;font-size:28px}
+.cart-item{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #eee}
+.cart-item img{width:72px;height:80px;object-fit:cover}
+.cart-item h4{font-family:Georgia,serif;margin-bottom:7px}
+.qty{display:flex;gap:10px;align-items:center;margin-top:8px}
+.qty button{background:white;border:1px solid #ddd;padding:3px 9px}
+.remove{border:0;background:none;color:#8a6478;font-size:11px;margin-left:auto}
+.subtotal{display:flex;justify-content:space-between;margin:22px 0;font-weight:bold}
+.checkout{width:100%;padding:15px;border:0;background:var(--plum);color:white}
+.cart-note{font-size:11px;color:#827580;line-height:1.7;margin-top:12px}
+.overlay{position:fixed;inset:0;background:#0007;z-index:20;display:none}
+.overlay.show{display:block}
+.empty{text-align:center;padding:50px 10px;color:#796773}
+@media(max-width:850px){
+ nav{gap:12px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .card img{height:clamp(190px,40vw,300px)}
+ .hero{padding:45px 6%;gap:22px}
+ .hero-img{height:340px}
+}
+@media(max-width:560px){
+ header{padding:14px 4%;gap:8px}
+ .logo{font-size:18px}
+ .logo small{font-size:7px;letter-spacing:2px}
+ nav{display:none}
+ .cart-btn{padding:10px;font-size:12px}
+ .hero{grid-template-columns:1fr;padding:38px 7%;gap:26px}
+ .hero-img{height:320px}
+ .section{padding:55px 5%}
+ .products{gap:17px 11px}
+ .card img{height:auto;aspect-ratio:.78}
+ .card-info{padding:10px}
+ .card h3{font-size:15px}
+ .add{padding:8px;font-size:11px}
+ .price{font-size:12px}
+ .story{grid-template-columns:1fr;padding:45px 7%;gap:25px}
+ .story img{height:280px}
+ .contact{padding:50px 7%}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">Handcrafted with love · Made for your special moments</div>
+
+<header>
+  <a href="#home" class="logo">Beads & Blooms<small>HANDCRAFTED ACCESSORIES</small></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#story">Our Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">Bag (<span id="count">0</span>)</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <span class="eyebrow">THE ART OF HANDCRAFT</span>
+    <h1>Little details.<br><em>Beautiful stories.</em></h1>
+    <p>Discover handmade beaded bags that blend the beauty of Indian tradition with modern style. Every piece is crafted with patience, care and love.</p>
+    <a href="#shop" class="primary">Explore Collection ↗</a>
+  </div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85" alt="Elegant boutique handbag">
+</section>
+
+<section class="section" id="shop">
+  <div class="heading">
+    <span class="eyebrow">MADE WITH LOVE</span>
+    <h2>Find your <em>favourite.</em></h2>
+    <p style="margin-top:12px;color:#756771;font-size:13px">Handcrafted bags for your most beautiful moments.</p>
+  </div>
+  <div class="filters">
+    <button class="filter active" onclick="filterProducts('All',this)">All pieces</button>
+    <button class="filter" onclick="filterProducts('Pearl',this)">Pearl edit</button>
+    <button class="filter" onclick="filterProducts('Festive',this)">Festive</button>
+    <button class="filter" onclick="filterProducts('Everyday',this)">Everyday</button>
+  </div>
+  <div class="products" id="products"></div>
+  <p style="font-size:11px;color:#887984;margin-top:20px">Please confirm product prices and replace sample photos with your actual handmade products before publishing.</p>
+</section>
+
+<section class="story" id="story">
+  <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=85" alt="Craft and accessories">
+  <div>
+    <span class="eyebrow">OUR STORY</span>
+    <h2>Made with patience.<br><em>Worn with pride.</em></h2>
+    <p>At Beads & Blooms, we believe every handcrafted piece tells a story. Inspired by Indian artistry, we create beaded bags that bring a little tradition into your everyday style.</p>
+    <p>Every piece is a labour of love, made to help you celebrate your own unique style.</p>
+    <a href="#contact" class="primary" style="display:inline-block;margin-top:10px">Get in touch ↗</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="eyebrow">LET'S CONNECT</span>
+  <h2>Need something <em>special?</em></h2>
+  <p>Questions about a bag, a custom design or an order? Send us a message and we'll be happy to help.</p>
+  <a class="primary" target="_blank" rel="noopener" href="https://wa.me/918303993262?text=Namaste%20Beads%20%26%20Blooms!%20I%20would%20like%20to%20know%20more%20about%20your%20bags.">Chat on WhatsApp ↗</a>
+</section>
+</main>
+
+<footer>
+  <div class="logo" style="color:white">Beads & Blooms</div>
+  <p>Tradition in every detail. Beauty in every bead.</p>
+  <a href="https://www.instagram.com/beads._.blooms0/" target="_blank" rel="noopener">Follow us on Instagram ↗</a>
+  <small>© <span id="year"></span> Beads & Blooms. Handcrafted with love.</small>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head">
+    <h2 style="font:27px Georgia,serif">Your Bag</h2>
+    <button class="close" onclick="closeCart()">×</button>
+  </div>
+  <div id="cartItems"></div>
+  <div id="cartFooter" hidden>
+    <div class="subtotal"><span>Subtotal</span><span id="total">₹0</span></div>
+    <button class="checkout" onclick="checkout()">Checkout on WhatsApp ↗</button>
+    <p class="cart-note">Shipping charges and payment details will be confirmed with you on WhatsApp. No payment is taken on this website.</p>
+  </div>
+</aside>
+
+<script>
+const WHATSAPP = "918303993262";
+
+const products = [
+ {id:1,name:"Pearl Dream Bag",category:"Pearl",price:1299,tag:"Bestseller",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"},
+ {id:2,name:"Midnight Beaded Bag",category:"Festive",price:1599,tag:"Statement",image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"},
+ {id:3,name:"Golden Celebration",category:"Festive",price:1799,tag:"Festive edit",image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"},
+ {id:4,name:"Blush Bloom Mini",category:"Everyday",price:999,tag:"Everyday",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80&sat=-25"},
+ {id:5,name:"Ivory Pearl Potli",category:"Pearl",price:1499,tag:"Timeless",image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80&sat=-30"},
+ {id:6,name:"Shaam Party Bag",category:"Festive",price:1399,tag:"Occasion",image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80&sat=-40"},
+ {id:7,name:"Everyday Charm",category:"Everyday",price:899,tag:"Easy favourite",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"},
+ {id:8,name:"Royal Beadwork",category:"Pearl",price:1899,tag:"Special piece",image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"}
+];
+
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem("bb-cart") || "[]"); } catch(e) { cart=[]; }
+
+function money(n) {
+ return "₹" + n.toLocaleString("en-IN");
+}
+
+function renderProducts(category="All") {
+ const list = category==="All" ? products : products.filter(p=>p.category===category);
+ document.getElementById("products").innerHTML = list.map(p=>`
+  <article class="card">
+   <img loading="lazy" src="${p.image}" alt="${p.name}">
+   <div class="card-info">
+    <span class="category">${p.tag}</span>
+    <h3>${p.name}</h3>
+    <div class="price-row">
+     <span class="price">${money(p.price)}</span>
+     <button class="add" onclick="addToCart(${p.id})">Add +</button>
+    </div>
+   </div>
+  </article>`).join("");
+}
+
+function filterProducts(category,button) {
+ document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderProducts(category);
+}
+
+function addToCart(id) {
+ const item=cart.find(i=>i.id===id);
+ if(item) item.qty++;
+ else cart.push({id,qty:1});
+ saveCart();
+ renderCart();
+}
+
+function saveCart() {
+ localStorage.setItem("bb-cart",JSON.stringify(cart));
+}
+
+function changeQty(id,delta) {
+ const item=cart.find(i=>i.id===id);
+ if(!item)return;
+ item.qty+=delta;
+ cart=cart.filter(i=>i.qty>0);
+ saveCart();
+ renderCart();
+}
+
+function removeItem(id) {
+ cart=cart.filter(i=>i.id!==id);
+ saveCart();
+ renderCart();
+}
+
+function renderCart() {
+ const count=cart.reduce((s,i)=>s+i.qty,0);
+ document.getElementById("count").textContent=count;
+ const items=cart.map(i=>({...i,product:products.find(p=>p.id===i.id)})).filter(i=>i.product);
+ const container=document.getElementById("cartItems");
+ document.getElementById("cartFooter").hidden=!items.length;
+
+ if(!items.length) {
+  container.innerHTML='<div class="empty"><h3>Your bag is waiting ♡</h3><p style="margin-top:8px">Add a handcrafted favourite to get started.</p></div>';
+  return;
+ }
+
+ container.innerHTML=items.map(i=>`
+  <div class="cart-item">
+   <img src="${i.product.image}" alt="">
+   <div style="flex:1">
+    <h4>${i.product.name}</h4>
+    <strong>${money(i.product.price*i.qty)}</strong>
+    <div class="qty">
+     <button onclick="changeQty(${i.id},-1)">−</button>
+     <span>${i.qty}</span>
+     <button onclick="changeQty(${i.id},1)">+</button>
+    </div>
+   </div>
+   <button class="remove" onclick="removeItem(${i.id})">Remove</button>
+  </div>`).join("");
+
+ const total=items.reduce((s,i)=>s+i.product.price*i.qty,0);
+ document.getElementById("total").textContent=money(total);
+}
+
+function openCart() {
+ document.getElementById("cartPanel").classList.add("open");
+ document.getElementById("overlay").classList.add("show");
+ document.body.style.overflow="hidden";
+}
+
+function closeCart() {
+ document.getElementById("cartPanel").classList.remove("open");
+ document.getElementById("overlay").classList.remove("show");
+ document.body.style.overflow="";
+}
+
+function checkout() {
+ if(!cart.length)return;
+ const lines=cart.map(i=>{
+  const p=products.find(p=>p.id===i.id);
+  return `${p.name} x ${i.qty} = ${money(p.price*i.qty)}`;
+ });
+ const total=cart.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0);
+ const message=`Namaste Beads & Blooms! I'd like to order:\n\n${lines.join("\n")}\n\nSubtotal: ${money(total)}\n\nPlease confirm availability, shipping charges and payment details.`;
+ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(message),"_blank");
+}
+
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();
+renderCart();
+</script>
+</body>
+  </html>
+  
