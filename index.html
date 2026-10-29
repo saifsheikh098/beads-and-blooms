@@ -1,792 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f8f1f8">
-<meta name="description" content="Discover handmade beaded bags, bracelets and accessories at Beads & Blooms. Thoughtfully handcrafted, made to be treasured.">
+<meta name="description" content="Handcrafted beaded bags, clutches, bracelets and accessories from Beads & Blooms.">
 <title>Beads & Blooms | Handmade with Love</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --bg:#fffdfb;
-  --lav:#eee3f1;
-  --lav2:#f8f1f8;
-  --lav3:#d8c2df;
-  --mauve:#92739d;
-  --pink:#f6e6ed;
-  --ink:#382f3a;
-  --muted:#827784;
-  --line:#eee5ef;
-  --serif:"Playfair Display",Georgia,serif;
-  --sans:"DM Sans",Arial,sans-serif;
-  --shadow:0 14px 45px #4e31580d;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-body.lock{overflow:hidden}
-button,input,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-img{display:block;width:100%}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--mauve);outline-offset:3px}
-.container{width:min(1160px,90%);margin:auto}
-.announcement{padding:9px 12px;text-align:center;background:var(--lav);font-size:9px;letter-spacing:1.8px}
-header{position:sticky;top:0;z-index:20;background:#fffdfbf2;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.navbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:10px;min-width:0}
-.logo{height:43px;width:43px;flex-shrink:0;border:1px solid var(--lav3);border-radius:50%;display:grid;place-items:center;background:var(--lav2);color:var(--mauve);font:italic 23px var(--serif)}
-.brand-name{font:21px var(--serif);white-space:nowrap}
-.brand-sub{font-size:8px;letter-spacing:2px;color:var(--muted);margin-top:3px}
-.nav-links{display:flex;align-items:center;gap:26px;font-size:11px}
-.nav-links a{padding:8px 0}
-.nav-links a:hover{color:var(--mauve)}
-.nav-actions{display:flex;align-items:center;gap:8px}
-.icon-btn{width:39px;height:39px;border:1px solid var(--line);border-radius:50%;background:white;display:grid;place-items:center;color:var(--ink);font-size:17px}
-.icon-btn:hover{background:var(--lav2)}
-.cart-count{font-size:10px;margin-left:2px}
-.menu-btn{display:none}
-.hero{padding:44px 0 58px;background:linear-gradient(120deg,#fcf7fc,#f2e8f5 65%,#fdf5f7);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
-.eyebrow{font-size:9px;letter-spacing:2.5px;color:var(--mauve);font-weight:700}
-h1,h2,h3,h4,p{margin-top:0}
-h1,h2,h3{font-family:var(--serif);font-weight:400}
-h1{font-size:clamp(43px,5.5vw,72px);line-height:1.08;letter-spacing:-1.7px;margin:20px 0}
-h1 em,h2 em{color:var(--mauve);font-weight:400}
-.hero-copy>p{max-width:430px;color:var(--muted);font-size:13px;line-height:2}
-.hero-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap;margin-top:27px}
-.btn{border:1px solid var(--lav3);border-radius:30px;background:var(--lav);color:var(--ink);padding:13px 20px;font-size:10px;letter-spacing:.6px;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.2s}
-.btn:hover{background:#e4d3e9;transform:translateY(-1px)}
-.btn-dark{background:var(--ink);color:white;border-color:var(--ink)}
-.btn-dark:hover{background:#514252}
-.link{font-size:11px;border-bottom:1px solid var(--lav3);padding-bottom:4px}
-.hero-visual{position:relative;padding:0 8px 12px 0}
-.hero-visual img{height:450px;object-fit:cover;object-position:center;background:var(--lav);border-radius:190px 190px 4px 4px;box-shadow:var(--shadow)}
-.hero-label{position:absolute;left:-25px;bottom:30px;padding:15px 18px;background:#fffdfbf2;border:1px solid var(--line);box-shadow:var(--shadow);font:italic 15px var(--serif)}
-.hero-stamp{position:absolute;right:-13px;top:25px;width:76px;height:76px;border:1px solid #c9b0d2;border-radius:50%;background:#fffdfbf2;display:grid;place-items:center;text-align:center;font:italic 12px/1.4 var(--serif);color:var(--mauve);transform:rotate(9deg)}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);padding:24px 0;border-bottom:1px solid var(--line);gap:15px}
-.benefit{display:flex;align-items:center;justify-content:center;gap:12px}
-.benefit-icon{font-size:23px;color:var(--mauve)}
-.benefit strong{font:15px var(--serif);display:block}
-.benefit small{font-size:9px;color:var(--muted);display:block;margin-top:4px}
-.section{padding:75px 0}
-.section-heading{text-align:center;margin-bottom:32px}
-.section-heading h2,.story h2,.contact h2{font-size:clamp(32px,4.2vw,47px);line-height:1.2;margin:13px 0}
-.section-heading p{font-size:12px;color:var(--muted);line-height:1.8}
-.shop-tools{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:23px;flex-wrap:wrap}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filter{border:1px solid var(--line);border-radius:25px;background:white;color:var(--muted);padding:9px 14px;font-size:10px;transition:.2s}
-.filter:hover,.filter.active{background:var(--lav);border-color:var(--lav3);color:var(--ink)}
-.tool-right{display:flex;gap:8px;align-items:center}
-.search-box{position:relative}
-.search-box input{width:185px;padding:10px 12px 10px 34px;border:1px solid var(--line);border-radius:25px;background:white;font-size:11px;color:var(--ink)}
-.search-symbol{position:absolute;left:12px;top:9px;color:var(--muted)}
-.sort-select{border:1px solid var(--line);border-radius:25px;background:white;padding:10px;font-size:10px;color:var(--muted);max-width:145px}
-.result-count{font-size:10px;color:var(--muted);margin-bottom:15px}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 20px}
-.product-card{min-width:0;position:relative;background:white;border:1px solid #f1eaf1;transition:transform .25s,box-shadow .25s}
-.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.product-photo{position:relative;overflow:hidden;background:var(--lav2)}
-.product-photo img{aspect-ratio:4/4.5;object-fit:cover;transition:transform .45s}
-.product-card:hover .product-photo img{transform:scale(1.035)}
-.product-tag{position:absolute;left:11px;top:11px;background:#fffdfbf2;padding:6px 9px;font-size:8px;letter-spacing:.6px}
-.wish-btn{position:absolute;right:10px;top:10px;width:34px;height:34px;border:0;border-radius:50%;background:#fffdfbf2;font-size:19px;color:var(--ink)}
-.wish-btn.on{color:#bd6388;background:#fff1f6}
-.quick-view{position:absolute;bottom:10px;left:10px;right:10px;width:calc(100% - 20px);border:0;padding:11px;background:#fffdfbf0;color:var(--ink);font-size:10px;opacity:0;transform:translateY(5px);transition:.2s}
-.product-card:hover .quick-view,.quick-view:focus-visible{opacity:1;transform:translateY(0)}
-.product-info{padding:14px}
-.product-category{font-size:8px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
-.product-info h3{font-size:19px;margin:7px 0 5px}
-.product-info p{font-size:10px;line-height:1.7;color:var(--muted);margin-bottom:12px;min-height:17px}
-.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.product-price{font-size:13px;font-weight:700;color:var(--mauve)}
-.add-btn{border:1px solid var(--lav3);border-radius:24px;background:var(--lav2);padding:9px 11px;font-size:9px;white-space:nowrap}
-.add-btn:hover{background:var(--lav)}
-.empty-results{grid-column:1/-1;padding:50px 15px;text-align:center;color:var(--muted);font:20px var(--serif)}
-.pricing-note{text-align:center;font-size:10px;color:var(--muted);margin:25px auto 0;line-height:1.8}
-.story{background:linear-gradient(120deg,#f8f0f8,#fdf7f7);padding:70px 0}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
-.story-art{min-height:340px;display:grid;place-items:center;padding:30px;background:var(--lav);border:8px solid white}
-.story-inner{width:100%;border:1px solid #cbb5d4;padding:40px 15px;text-align:center}
-.story-monogram{font:italic 70px var(--serif);color:var(--mauve)}
-.story-inner p{font:italic 19px var(--serif);line-height:1.6;margin:0}
-.story-copy>p,.contact>p{font-size:12px;line-height:2;color:var(--muted);margin:16px 0}
-.story-copy .btn{margin-top:7px}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:24px}
-.value{border-top:1px solid var(--lav3);padding-top:13px}
-.value strong{font:15px var(--serif);display:block}
-.value small{font-size:9px;color:var(--muted);line-height:1.7;display:block;margin-top:5px}
-.quote{padding:48px 15px;text-align:center;background:var(--lav)}
-.quote-symbol{font:48px var(--serif);color:var(--mauve);height:35px}
-.quote p{font:clamp(20px,3vw,28px)/1.5 var(--serif);margin:15px 0}
-.quote small{font-size:9px;letter-spacing:2px;color:var(--muted)}
-.contact{padding:75px 0;text-align:center}
-.contact>p{max-width:480px;margin:15px auto 22px}
-.contact-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.instagram-link{display:block;color:var(--mauve);font-size:11px;margin-top:22px}
-footer{background:#f1e8f3;text-align:center;padding:35px 0 20px}
-.footer-brand{font:26px var(--serif);color:var(--mauve)}
-.footer-tagline{font:italic 13px var(--serif);color:var(--muted);margin:9px 0 18px}
-.footer-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:10px;margin:20px 0}
-.copyright{border-top:1px solid #dfd0e3;padding-top:16px;color:var(--muted);font-size:9px}
-
-/* Cart drawer and product quick-view modal */
-.overlay{position:fixed;inset:0;z-index:40;background:#21192380;opacity:0;visibility:hidden;transition:.25s}
-.overlay.show{opacity:1;visibility:visible}
-.drawer{position:fixed;z-index:50;top:0;right:0;width:min(430px,100%);height:100dvh;background:var(--bg);padding:22px;overflow:auto;transform:translateX(105%);transition:transform .28s}
-.drawer.open{transform:translateX(0)}
-.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}
-.drawer-head h2{font-size:27px;margin:0}
-.close-btn{border:0;background:none;font-size:28px;color:var(--mauve)}
-.cart-line{display:flex;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
-.cart-line img{width:73px;height:82px;object-fit:cover;background:var(--lav2)}
-.cart-line-info{flex:1;min-width:0}
-.cart-line h4{font:16px var(--serif);margin:0 0 6px}
-.cart-line-price{font-size:11px;font-weight:700;color:var(--mauve)}
-.quantity{display:flex;align-items:center;gap:11px;margin-top:9px}
-.quantity button{width:26px;height:26px;background:var(--lav2);border:1px solid var(--line)}
-.remove-btn{border:0;background:none;color:var(--muted);font-size:9px}
-.cart-summary{padding-top:20px}
-.total-row{display:flex;justify-content:space-between;margin-bottom:18px;font-size:13px;font-weight:700}
-.checkout-btn{width:100%;padding:14px;background:var(--ink);color:white;border:0;border-radius:28px;font-size:10px;letter-spacing:1px}
-.checkout-btn:hover{background:#5c4b5e}
-.cart-disclaimer{font-size:10px;color:var(--muted);line-height:1.8;margin-top:12px}
-.cart-empty{text-align:center;padding:55px 10px}
-.cart-empty .empty-icon{font:45px var(--serif);color:var(--mauve)}
-.cart-empty h3{font-size:25px;margin:12px 0}
-.cart-empty p{font-size:11px;color:var(--muted);line-height:1.8}
-.modal{position:fixed;z-index:60;left:50%;top:50%;transform:translate(-50%,-46%);width:min(780px,92%);max-height:88dvh;overflow:auto;background:var(--bg);opacity:0;visibility:hidden;transition:.25s}
-.modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%)}
-.modal-close{position:absolute;right:12px;top:10px;z-index:2;width:35px;height:35px;border:0;border-radius:50%;background:#fffdfbf2;font-size:24px}
-.modal-grid{display:grid;grid-template-columns:1fr 1fr}
-.modal-grid>img{height:100%;min-height:350px;max-height:540px;object-fit:cover;background:var(--lav2)}
-.modal-info{padding:40px 28px;align-self:center}
-.modal-info h2{font-size:32px;line-height:1.2;margin:12px 0}
-.modal-info p{font-size:12px;color:var(--muted);line-height:1.9;margin:15px 0}
-.modal-price{font-size:17px;color:var(--mauve);font-weight:700;margin-bottom:22px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:white;padding:13px 19px;border-radius:30px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;z-index:80;white-space:nowrap;max-width:90%;text-align:center}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{animation:fadeUp .6s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-@media(min-width:900px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:760px){
- .container{width:92%}
- .navbar{height:70px}
- .nav-links{gap:13px}
- .nav-links a{font-size:10px}
- .hero-grid{gap:25px}
- .hero-visual img{height:370px}
- .hero-label{left:-10px}
- .products{gap:20px 13px}
- .story-grid{gap:28px}
-}
-@media(max-width:570px){
- .container{width:91%}
- .announcement{font-size:8px;letter-spacing:1px}
- .brand{gap:6px}
- .logo{width:35px;height:35px;font-size:19px}
- .brand-name{font-size:17px}
- .brand-sub{font-size:6px;letter-spacing:1.3px}
- .nav-links{display:none;position:absolute;left:0;right:0;top:70px;background:var(--bg);padding:16px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:4px}
- .nav-links.mobile-open{display:flex}
- .nav-links a{padding:12px}
- .menu-btn{display:grid}
- .icon-btn{width:34px;height:34px}
- .hero{padding:36px 0 40px}
- .hero-grid{grid-template-columns:1fr;gap:28px}
- h1{font-size:49px}
- .hero-copy>p{font-size:12px}
- .hero-visual{width:88%;margin:auto}
- .hero-visual img{height:360px}
- .hero-stamp{right:-17px;width:65px;height:65px;font-size:10px}
- .hero-label{left:-20px;font-size:13px;padding:12px}
- .benefits{gap:10px;padding:20px 0}
- .benefit{gap:7px;justify-content:flex-start}
- .benefit-icon{font-size:18px}
- .benefit strong{font-size:12px}
- .benefit small{font-size:8px}
- .section{padding:53px 0}
- .section-heading h2,.story h2,.contact h2{font-size:34px}
- .shop-tools{align-items:stretch}
- .filters{width:100%;gap:6px}
- .filter{padding:8px 10px;font-size:9px}
- .tool-right{width:100%}
- .search-box{flex:1}
- .search-box input{width:100%}
- .sort-select{max-width:135px}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 10px}
- .product-info{padding:10px}
- .product-info h3{font-size:16px}
- .product-info p{font-size:9px;min-height:30px}
- .product-price{font-size:11px}
- .add-btn{padding:8px;font-size:8px}
- .product-tag{font-size:7px;left:7px;top:7px}
- .wish-btn{width:29px;height:29px;right:7px;top:7px}
- .quick-view{display:none}
- .story{padding:48px 0}
- .story-grid{grid-template-columns:1fr;gap:28px}
- .story-art{min-height:255px}
- .story-inner{padding:25px 12px}
- .story-monogram{font-size:58px}
- .values{gap:9px}
- .value strong{font-size:13px}
- .value small{font-size:8px}
- .contact{padding:55px 0}
- .modal-grid{grid-template-columns:1fr}
- .modal-grid>img{height:260px;min-height:0}
- .modal-info{padding:23px}
- .modal-info h2{font-size:28px}
- .drawer{padding:18px}
-}
+:root{--bg:#fffafd;--lav:#e9dcf2;--lav2:#f7effb;--lav3:#d4bce2;--mauve:#82619a;--ink:#30233f;--muted:#817487;--line:#eadfee;--gold:#c4a45c;--blush:#f8e9f1;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--shadow:0 14px 45px #4e31580d}
+.logo-image{width:46px;height:46px;object-fit:cover;border-radius:50%;border:1px solid #d8c28b;box-shadow:0 3px 12px #8d6c9b18}.logo-fallback{flex-shrink:0;border-color:#d8c28b;background:linear-gradient(145deg,#f7eafb,#f5dfe9);color:#a58a42}.eyebrow{color:#8c6b9f} .hero-stamp{border-color:#d5c08a;color:#987c3c}.btn{border-color:#d9c6e1}.btn:hover{border-color:#c6a9d4}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}img{display:block;width:100%}.container{width:min(1160px,91%);margin:auto}
+.announcement{padding:9px 12px;text-align:center;background:var(--lav);font-size:9px;letter-spacing:1.5px}
+header{position:sticky;top:0;z-index:20;background:#fffafdF2;backdrop-filter:blur(14px);border-bottom:1px solid #e7d7e9;transition:box-shadow .3s}header.scrolled{box-shadow:0 8px 28px #4e31580b}
+.navbar{height:74px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:9px}.logo{height:42px;width:42px;border:1px solid var(--lav3);border-radius:50%;display:grid;place-items:center;background:var(--lav2);color:var(--mauve);font:italic 22px var(--serif);transition:transform .4s}.brand:hover .logo{transform:rotate(-9deg)}.brand-name{font:21px var(--serif);white-space:nowrap}.brand-sub{font-size:8px;letter-spacing:1.8px;color:var(--muted);margin-top:3px}
+.nav-links{display:flex;gap:25px;font-size:11px}.nav-links a{position:relative;padding:8px 0}.nav-links a:after{content:'';position:absolute;bottom:2px;left:0;width:100%;height:1px;background:var(--mauve);transform:scaleX(0);transform-origin:right;transition:transform .25s}.nav-links a:hover:after{transform:scaleX(1);transform-origin:left}.nav-actions{display:flex;gap:8px}.icon-btn{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:white;display:grid;place-items:center;font-size:17px;transition:transform .2s,background .2s}.icon-btn:hover{background:var(--lav2);transform:translateY(-2px)}.cart-count{font-size:10px;display:inline-block}.cart-count.bump{animation:bump .35s ease}.menu-btn{display:none}
+.hero{padding:44px 0 58px;background:radial-gradient(ellipse at 8% 18%,#e9d9f1 0,transparent 35%),radial-gradient(ellipse at 95% 85%,#f6e1ed 0,transparent 32%),linear-gradient(120deg,#fffafd,#f5eafa 58%,#fff5f8);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}.eyebrow{font-size:9px;letter-spacing:2.4px;color:var(--mauve);font-weight:700}h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin-top:0}h1{font-size:clamp(43px,5.5vw,72px);line-height:1.08;letter-spacing:-1.5px;margin:20px 0}h1 em,h2 em{color:var(--mauve);font-weight:400}.hero-copy>p{max-width:430px;color:var(--muted);font-size:13px;line-height:2}.hero-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap;margin-top:27px}.btn{border:1px solid var(--lav3);border-radius:30px;background:var(--lav);padding:13px 20px;font-size:10px;letter-spacing:.5px;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .25s,background .25s,box-shadow .25s}.btn:hover{background:#e4d3e9;transform:translateY(-2px);box-shadow:0 8px 20px #92739d18}.btn-dark{background:var(--ink);color:white;border-color:var(--ink)}.btn-dark:hover{background:#514252}.link{font-size:11px;border-bottom:1px solid var(--lav3);padding-bottom:4px}
+.hero-visual{position:relative;padding:0 8px 12px 0;animation:heroIn .9s .12s both}.hero-visual img{height:450px;object-fit:cover;border-radius:190px 190px 4px 4px;box-shadow:var(--shadow);transition:transform .7s,box-shadow .5s}.hero-visual:hover img{transform:scale(1.012);box-shadow:0 22px 55px #4e315817}.hero-label{position:absolute;left:-24px;bottom:30px;padding:15px 18px;background:#fffdfbf2;border:1px solid var(--line);box-shadow:var(--shadow);font:italic 15px var(--serif);animation:float 5s 1.2s ease-in-out infinite}.hero-stamp{position:absolute;right:-12px;top:25px;width:76px;height:76px;border:1px solid #c9b0d2;border-radius:50%;background:#fffdfbf2;display:grid;place-items:center;text-align:center;font:italic 12px/1.4 var(--serif);color:var(--mauve);transform:rotate(9deg);animation:stampIn .7s .6s both}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);padding:24px 0;border-bottom:1px solid var(--line);gap:15px}.benefit{display:flex;align-items:center;justify-content:center;gap:12px}.benefit-icon{font-size:23px;color:var(--mauve);transition:transform .3s}.benefit:hover .benefit-icon{transform:rotate(-12deg) scale(1.1)}.benefit strong{font:15px var(--serif);display:block}.benefit small{font-size:9px;color:var(--muted);display:block;margin-top:4px}
+.section{padding:75px 0}.section-heading{text-align:center;margin-bottom:32px}.section-heading h2,.story h2,.contact h2{font-size:clamp(32px,4.2vw,47px);line-height:1.2;margin:13px 0}.section-heading p{font-size:12px;color:var(--muted);line-height:1.8}.shop-tools{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:23px;flex-wrap:wrap}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);border-radius:25px;background:white;color:var(--muted);padding:9px 14px;font-size:10px;transition:background .2s,transform .2s}.filter:hover{transform:translateY(-1px)}.filter.active,.filter:hover{background:var(--lav);border-color:var(--lav3);color:var(--ink)}.tool-right{display:flex;gap:8px;align-items:center}.search-box{position:relative}.search-box input{width:185px;padding:10px 12px 10px 34px;border:1px solid var(--line);border-radius:25px;background:white;font-size:11px}.search-box input:focus{outline:0;border-color:var(--lav3);box-shadow:0 0 0 3px #eee3f166}.search-symbol{position:absolute;left:12px;top:9px;color:var(--muted)}.sort-select{border:1px solid var(--line);border-radius:25px;background:white;padding:10px;font-size:10px;color:var(--muted);max-width:145px}.result-count{font-size:10px;color:var(--muted);margin-bottom:15px}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 20px}.product-card{min-width:0;background:white;border:1px solid #f1eaf1;opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .3s}.product-card.in-view{opacity:1;transform:translateY(0)}.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#e6d8e9}.product-photo{position:relative;overflow:hidden;background:var(--lav2)}.product-photo img{aspect-ratio:4/4.5;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1)}.product-card:hover .product-photo img{transform:scale(1.045)}.product-tag{position:absolute;left:11px;top:11px;background:#fffdfbf2;padding:6px 9px;font-size:8px;letter-spacing:.6px}.wish-btn{position:absolute;right:10px;top:10px;width:34px;height:34px;border:0;border-radius:50%;background:#fffdfbf2;font-size:19px;transition:transform .2s,color .2s}.wish-btn:hover{transform:scale(1.08)}.wish-btn.on{color:#bd6388;background:#fff1f6;animation:heart .3s}.quick-view{position:absolute;bottom:10px;left:10px;right:10px;width:calc(100% - 20px);border:0;padding:11px;background:#fffdfbf0;color:var(--ink);font-size:10px;opacity:0;transform:translateY(7px);transition:opacity .25s,transform .25s}.product-card:hover .quick-view,.quick-view:focus-visible{opacity:1;transform:translateY(0)}.product-info{padding:14px}.product-category{font-size:8px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}.product-info h3{font-size:19px;margin:7px 0 5px}.product-info p{font-size:10px;line-height:1.7;color:var(--muted);margin-bottom:12px;min-height:17px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.product-price{font-size:13px;font-weight:700;color:var(--mauve)}.add-btn{border:1px solid var(--lav3);border-radius:24px;background:var(--lav2);padding:9px 11px;font-size:9px;white-space:nowrap;transition:background .2s,transform .2s}.add-btn:hover{background:var(--lav);transform:translateY(-1px)}.pricing-note{text-align:center;font-size:10px;color:var(--muted);margin:25px auto 0;line-height:1.8}.empty-results{grid-column:1/-1;padding:50px 15px;text-align:center;color:var(--muted);font:20px var(--serif)}
+.story{background:radial-gradient(ellipse at 0% 15%,#eadcf5 0,transparent 38%),linear-gradient(120deg,#f8f0fb,#fff7fa);padding:70px 0}.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}.story-art{min-height:340px;display:grid;place-items:center;padding:30px;background:linear-gradient(145deg,#eadcf4,#f9eaf2);border:8px solid white;transition:transform .5s,box-shadow .5s}.story-art:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.story-inner{width:100%;border:1px solid #d1b77b;padding:40px 15px;text-align:center}.story-monogram{font:italic 70px var(--serif);color:#b59749;text-shadow:0 2px 0 #fff8}.story-inner p{font:italic 19px/1.6 var(--serif);margin:0}.story-copy>p,.contact>p{font-size:12px;line-height:2;color:var(--muted);margin:16px 0}.story-copy .btn{margin-top:7px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:24px}.value{border-top:1px solid var(--lav3);padding-top:13px}.value strong{font:15px var(--serif);display:block}.value small{font-size:9px;color:var(--muted);line-height:1.7;display:block;margin-top:5px}
+.quote{padding:48px 15px;text-align:center;background:linear-gradient(110deg,#eee2f6,#f9e9f2,#f2e7f7);border-top:1px solid #e5d4e8;border-bottom:1px solid #e5d4e8}.quote-symbol{font:48px var(--serif);color:var(--mauve);height:35px}.quote p{font:clamp(20px,3vw,28px)/1.5 var(--serif);margin:15px 0}.quote small{font-size:9px;letter-spacing:2px;color:var(--muted)}.contact{padding:75px 0;text-align:center}.contact>p{max-width:480px;margin:15px auto 22px}.contact-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.instagram-link{display:block;color:var(--mauve);font-size:11px;margin-top:22px}footer{background:#f1e8f3;text-align:center;padding:35px 0 20px}.footer-brand{font:26px var(--serif);color:var(--mauve)}.footer-tagline{font:italic 13px var(--serif);color:var(--muted);margin:9px 0 18px}.footer-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:10px;margin:20px 0}.footer-links a:hover{color:var(--mauve)}.copyright{border-top:1px solid #dfd0e3;padding-top:16px;color:var(--muted);font-size:9px}
+.overlay{position:fixed;inset:0;z-index:40;background:#21192380;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}.overlay.show{opacity:1;visibility:visible}.drawer{position:fixed;z-index:50;top:0;right:0;width:min(430px,100%);height:100dvh;background:var(--bg);padding:22px;overflow:auto;transform:translateX(105%);transition:transform .32s cubic-bezier(.2,.7,.2,1)}.drawer.open{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}.drawer-head h2{font-size:27px;margin:0}.close-btn{border:0;background:none;font-size:28px;color:var(--mauve);transition:transform .2s}.close-btn:hover{transform:rotate(90deg)}.cart-line{display:flex;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line);animation:fadeUp .25s}.cart-line img{width:73px;height:82px;object-fit:cover;background:var(--lav2)}.cart-line-info{flex:1;min-width:0}.cart-line h4{font:16px var(--serif);margin:0 0 6px}.cart-line-price{font-size:11px;font-weight:700;color:var(--mauve)}.quantity{display:flex;align-items:center;gap:11px;margin-top:9px}.quantity button{width:26px;height:26px;background:var(--lav2);border:1px solid var(--line)}.remove-btn{border:0;background:none;color:var(--muted);font-size:9px}.cart-summary{padding-top:20px}.total-row{display:flex;justify-content:space-between;margin-bottom:18px;font-size:13px;font-weight:700}.checkout-btn{width:100%;padding:14px;background:var(--ink);color:white;border:0;border-radius:28px;font-size:10px;letter-spacing:1px;transition:background .2s,transform .2s}.checkout-btn:hover{background:#5c4b5e;transform:translateY(-1px)}.cart-disclaimer{font-size:10px;color:var(--muted);line-height:1.8;margin-top:12px}.cart-empty{text-align:center;padding:55px 10px;animation:fadeUp .35s}.cart-empty .empty-icon{font:45px var(--serif);color:var(--mauve)}.cart-empty h3{font-size:25px;margin:12px 0}.cart-empty p{font-size:11px;color:var(--muted);line-height:1.8}
+.modal{position:fixed;z-index:60;left:50%;top:50%;transform:translate(-50%,-46%) scale(.985);width:min(780px,92%);max-height:88dvh;overflow:auto;background:var(--bg);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}.modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}.modal-close{position:absolute;right:12px;top:10px;z-index:2;width:35px;height:35px;border:0;border-radius:50%;background:#fffdfbf2;font-size:24px}.modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-grid>img{height:100%;min-height:350px;max-height:540px;object-fit:cover;background:var(--lav2)}.modal-info{padding:40px 28px;align-self:center}.modal-info h2{font-size:32px;line-height:1.2;margin:12px 0}.modal-info p{font-size:12px;color:var(--muted);line-height:1.9;margin:15px 0}.modal-price{font-size:17px;color:var(--mauve);font-weight:700;margin-bottom:22px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:white;padding:13px 19px;border-radius:30px;font-size:11px;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:80;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.js-motion .reveal,.js-motion .reveal-left,.js-motion .reveal-right{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}.js-motion .reveal-left{transform:translateX(-18px)}.js-motion .reveal-right{transform:translateX(18px)}.js-motion .reveal.in-view,.js-motion .reveal-left.in-view,.js-motion .reveal-right.in-view{opacity:1;transform:translate(0)}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes stampIn{from{opacity:0;transform:rotate(-5deg) scale(.8)}to{opacity:1;transform:rotate(9deg) scale(1)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.4)}100%{transform:scale(1)}}@keyframes heart{0%{transform:scale(.85)}65%{transform:scale(1.18)}100%{transform:scale(1)}}@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.container{width:92%}.hero-grid{gap:25px}.hero-visual img{height:370px}.hero-label{left:-10px}.products{gap:20px 13px}.story-grid{gap:28px}}
+@media(max-width:570px){.container{width:91%}.announcement{font-size:8px;letter-spacing:1px}.brand{gap:6px}.logo{width:35px;height:35px;font-size:19px}.logo-image{width:38px;height:38px}.brand-name{font-size:17px}.brand-sub{font-size:6px;letter-spacing:1.2px}.navbar{height:70px}.nav-links{display:none;position:absolute;left:0;right:0;top:70px;background:var(--bg);padding:16px 5%;border-bottom:1px solid var(--line);flex-direction:column;gap:4px}.nav-links.mobile-open{display:flex;animation:menuIn .22s ease}.nav-links a{padding:12px}.menu-btn{display:grid}.icon-btn{width:34px;height:34px}.hero{padding:36px 0 40px}.hero-grid{grid-template-columns:1fr;gap:28px}h1{font-size:49px}.hero-copy>p{font-size:12px}.hero-visual{width:88%;margin:auto}.hero-visual img{height:360px}.hero-stamp{right:-17px;width:65px;height:65px;font-size:10px}.hero-label{left:-20px;font-size:13px;padding:12px}.benefits{gap:10px;padding:20px 0}.benefit{gap:7px;justify-content:flex-start}.benefit-icon{font-size:18px}.benefit strong{font-size:12px}.benefit small{font-size:8px}.section{padding:53px 0}.section-heading h2,.story h2,.contact h2{font-size:34px}.shop-tools{align-items:stretch}.filters{width:100%;gap:6px}.filter{padding:8px 10px;font-size:9px}.tool-right{width:100%}.search-box{flex:1}.search-box input{width:100%}.sort-select{max-width:135px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 10px}.product-info{padding:10px}.product-info h3{font-size:16px}.product-info p{font-size:9px;min-height:30px}.product-price{font-size:11px}.add-btn{padding:8px;font-size:8px}.product-tag{font-size:7px;left:7px;top:7px}.wish-btn{width:29px;height:29px;right:7px;top:7px}.quick-view{display:none}.story{padding:48px 0}.story-grid{grid-template-columns:1fr;gap:28px}.story-art{min-height:255px}.story-inner{padding:25px 12px}.story-monogram{font-size:58px}.values{gap:9px}.value strong{font-size:13px}.value small{font-size:8px}.contact{padding:55px 0}.modal-grid{grid-template-columns:1fr}.modal-grid>img{height:260px;min-height:0}.modal-info{padding:23px}.modal-info h2{font-size:28px}.drawer{padding:18px}}
+@keyframes menuIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.js-motion .reveal,.js-motion .reveal-left,.js-motion .reveal-right,.product-card{opacity:1!important;transform:none!important}}
 </style>
 </head>
-
 <body>
 <div class="announcement">✿ HANDCRAFTED WITH LOVE · LITTLE THINGS, BEAUTIFUL MEMORIES ✿</div>
-
-<header>
- <div class="container navbar">
-  <a href="#home" class="brand" aria-label="Beads and Blooms home">
-   <span class="logo">B<span style="font-size:11px">&</span>B</span>
-   <span>
-    <span class="brand-name">beads & blooms</span>
-    <span class="brand-sub" style="display:block">HANDCRAFTED ACCESSORIES</span>
-   </span>
-  </a>
-
-  <nav class="nav-links" id="navLinks">
-   <a href="#home">Home</a>
-   <a href="#shop">Shop All</a>
-   <a href="#story">Our Story</a>
-   <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="nav-actions">
-   <button class="icon-btn" onclick="openWishlist()" aria-label="View wishlist">♡</button>
-   <button class="icon-btn" onclick="openCart()" aria-label="Open shopping bag">♧<span class="cart-count" id="cartCount">0</span></button>
-   <button class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">☰</button>
-  </div>
- </div>
-</header>
-
+<header id="siteHeader"><div class="container navbar">
+<a href="#home" class="brand" aria-label="Beads and Blooms home"><img class="logo-image" src="images/beads-blooms-logo.jpg" alt="Beads & Blooms logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="logo logo-fallback" style="display:none">B<span style="font-size:11px">&</span>B</span><span><span class="brand-name">beads & blooms</span><span class="brand-sub" style="display:block">HANDCRAFTED ACCESSORIES</span></span></a>
+<nav class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#shop">Shop All</a><a href="#story">Our Story</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><button class="icon-btn" onclick="openWishlist()" aria-label="View wishlist">♡</button><button class="icon-btn" onclick="openCart()" aria-label="Open shopping bag">♧<span class="cart-count" id="cartCount">0</span></button><button class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">☰</button></div>
+</div></header>
 <main>
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div class="hero-copy">
-   <span class="eyebrow">THE ART OF HANDMADE</span>
-   <h1>Little beads.<br><em>Lovely things.</em></h1>
-   <p>Accessories with a little more heart. Discover handcrafted beaded bags, playful clutches and delicate jewellery, thoughtfully made for your special moments.</p>
-   <div class="hero-actions">
-    <a class="btn" href="#shop">Explore collection <span>↗</span></a>
-    <a class="link" href="#story">Our story</a>
-   </div>
-  </div>
-  <div class="hero-visual">
-   <img src="images/white-pearl-beaded-handbag.png" alt="White pearl beaded handbag with black bow" fetchpriority="high">
-   <div class="hero-label">A little handmade happiness ♡</div>
-   <div class="hero-stamp">Made<br>with love<br>✿</div>
-  </div>
- </div>
-</section>
-
-<section class="container benefits" aria-label="Our values">
- <div class="benefit"><span class="benefit-icon">✿</span><div><strong>Handcrafted</strong><small>Made with care</small></div></div>
- <div class="benefit"><span class="benefit-icon">♡</span><div><strong>One of a kind</strong><small>Details to treasure</small></div></div>
- <div class="benefit"><span class="benefit-icon">❀</span><div><strong>Made for gifting</strong><small>Share a little love</small></div></div>
-</section>
-
-<section class="section" id="shop">
- <div class="container">
-  <div class="section-heading">
-   <span class="eyebrow">THE COLLECTION</span>
-   <h2>Find your <em>little favourite.</em></h2>
-   <p>Thoughtful details. Handmade charm. Pieces that feel like you.</p>
-  </div>
-
-  <div class="shop-tools">
-   <div class="filters" id="filters">
-    <button class="filter active" data-category="All">All pieces</button>
-    <button class="filter" data-category="Bags">Beaded bags</button>
-    <button class="filter" data-category="Clutches">Clutches</button>
-    <button class="filter" data-category="Bracelets">Bracelets</button>
-    <button class="filter" data-category="Accessories">Accessories</button>
-   </div>
-   <div class="tool-right">
-    <label class="search-box">
-     <span class="search-symbol">⌕</span>
-     <input id="searchInput" type="search" placeholder="Find something lovely..." aria-label="Search products">
-    </label>
-    <select class="sort-select" id="sortSelect" aria-label="Sort products">
-     <option value="featured">Featured</option>
-     <option value="low">Price: low to high</option>
-     <option value="high">Price: high to low</option>
-     <option value="az">Name: A–Z</option>
-    </select>
-   </div>
-  </div>
-
-  <div class="result-count" id="resultCount" aria-live="polite"></div>
-  <div class="products" id="products"></div>
-  <p class="pricing-note">Prices are illustrative until confirmed by the seller. Please check availability, final price and shipping on WhatsApp before ordering.</p>
- </div>
-</section>
-
-<section class="story" id="story">
- <div class="container story-grid">
-  <div class="story-art">
-   <div class="story-inner">
-    <div class="story-monogram">B & B</div>
-    <p>Handmade with love,<br>made to be treasured.</p>
-   </div>
-  </div>
-  <div class="story-copy">
-   <span class="eyebrow">OUR LITTLE WORLD</span>
-   <h2>Every bead tells<br><em>a little story.</em></h2>
-   <p>Beads & Blooms is all about the beauty of handmade accessories. From pearl-covered bags to colourful beadwork, each piece brings its own personality.</p>
-   <p>We believe the little details matter. A favourite accessory, a thoughtful gift, or something made just for you can turn an ordinary day into a special one.</p>
-   <a href="#contact" class="btn">Let's find your favourite ↗</a>
-   <div class="values">
-    <div class="value"><strong>Thoughtful</strong><small>Care in every detail.</small></div>
-    <div class="value"><strong>Personal</strong><small>Pieces with personality.</small></div>
-    <div class="value"><strong>Handmade</strong><small>Charm beyond trends.</small></div>
-   </div>
-  </div>
- </div>
-</section>
-
-<section class="quote">
- <div class="quote-symbol">“</div>
- <p>Not just an accessory.<br>A little piece of your story.</p>
- <small>WITH LOVE, BEADS & BLOOMS</small>
-</section>
-
-<section class="contact" id="contact">
- <div class="container">
-  <span class="eyebrow">LET'S CONNECT</span>
-  <h2>Something caught<br><em>your eye?</em></h2>
-  <p>Ask us about a product, check availability or place an order. We would love to help you find something special.</p>
-  <div class="contact-buttons">
-   <a class="btn btn-dark" href="https://wa.me/918303993262?text=Hi%20Beads%20%26%20Blooms!%20I%27d%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
-   <a class="btn" href="#shop">Browse products</a>
-  </div>
-  <a class="instagram-link" href="https://www.instagram.com/beads._.blooms0/" target="_blank" rel="noopener">Follow our journey on Instagram ↗</a>
- </div>
-</section>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="hero-copy reveal-left"><span class="eyebrow">THE ART OF HANDMADE</span><h1>Little beads.<br><em>Lovely things.</em></h1><p>Accessories with a little more heart. Discover handcrafted beaded bags, playful clutches and delicate jewellery, thoughtfully made for your special moments.</p><div class="hero-actions"><a class="btn" href="#shop">Explore collection <span>↗</span></a><a class="link" href="#story">Our story</a></div></div>
+<div class="hero-visual"><img src="images/white-pearl-beaded-handbag.png" alt="White pearl beaded handbag with black bow" fetchpriority="high"><div class="hero-label">A little handmade happiness ♡</div><div class="hero-stamp">Made<br>with love<br>✿</div></div>
+</div></section>
+<section class="container benefits" aria-label="Our values"><div class="benefit reveal"><span class="benefit-icon">✿</span><div><strong>Handcrafted</strong><small>Made with care</small></div></div><div class="benefit reveal"><span class="benefit-icon">♡</span><div><strong>One of a kind</strong><small>Details to treasure</small></div></div><div class="benefit reveal"><span class="benefit-icon">❀</span><div><strong>Made for gifting</strong><small>Share a little love</small></div></div></section>
+<section class="section" id="shop"><div class="container"><div class="section-heading reveal"><span class="eyebrow">THE COLLECTION</span><h2>Find your <em>little favourite.</em></h2><p>Thoughtful details. Handmade charm. Pieces that feel like you.</p></div>
+<div class="shop-tools"><div class="filters" id="filters"><button class="filter active" data-category="All">All pieces</button><button class="filter" data-category="Bags">Beaded bags</button><button class="filter" data-category="Clutches">Clutches</button><button class="filter" data-category="Bracelets">Bracelets</button><button class="filter" data-category="Accessories">Accessories</button></div><div class="tool-right"><label class="search-box"><span class="search-symbol">⌕</span><input id="searchInput" type="search" placeholder="Find something lovely..." aria-label="Search products"></label><select class="sort-select" id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A–Z</option></select></div></div>
+<div class="result-count" id="resultCount" aria-live="polite"></div><div class="products" id="products"></div><p class="pricing-note">Prices are illustrative until confirmed by the seller. Please check availability, final price and shipping on WhatsApp before ordering.</p></div></section>
+<section class="story" id="story"><div class="container story-grid"><div class="story-art reveal-left"><div class="story-inner"><div class="story-monogram">B & B</div><p>Handmade with love,<br>made to be treasured.</p></div></div><div class="story-copy reveal-right"><span class="eyebrow">OUR LITTLE WORLD</span><h2>Every bead tells<br><em>a little story.</em></h2><p>Beads & Blooms is all about the beauty of handmade accessories. From pearl-covered bags to colourful beadwork, each piece brings its own personality.</p><p>We believe the little details matter. A favourite accessory, a thoughtful gift, or something made just for you can turn an ordinary day into a special one.</p><a href="#contact" class="btn">Let's find your favourite ↗</a><div class="values"><div class="value"><strong>Thoughtful</strong><small>Care in every detail.</small></div><div class="value"><strong>Personal</strong><small>Pieces with personality.</small></div><div class="value"><strong>Handmade</strong><small>Charm beyond trends.</small></div></div></div></div></section>
+<section class="quote reveal"><div class="quote-symbol">“</div><p>Not just an accessory.<br>A little piece of your story.</p><small>WITH LOVE, BEADS & BLOOMS</small></section>
+<section class="contact" id="contact"><div class="container reveal"><span class="eyebrow">LET'S CONNECT</span><h2>Something caught<br><em>your eye?</em></h2><p>Ask us about a product, check availability or place an order. We would love to help you find something special.</p><div class="contact-buttons"><a class="btn btn-dark" href="https://wa.me/918303993262?text=Hi%20Beads%20%26%20Blooms!%20I%27d%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">Chat on WhatsApp ↗</a><a class="btn" href="#shop">Browse products</a></div><a class="instagram-link" href="https://www.instagram.com/beads._.blooms0/" target="_blank" rel="noopener">Follow our journey on Instagram ↗</a></div></section>
 </main>
-
-<footer>
- <div class="container">
-  <div class="footer-brand">beads & blooms</div>
-  <p class="footer-tagline">Little beads. Lovely things. Made with love.</p>
-  <div class="footer-links">
-   <a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Our story</a><a href="#contact">Contact</a>
-   <a href="https://www.instagram.com/beads._.blooms0/" target="_blank" rel="noopener">Instagram ↗</a>
-  </div>
-  <div class="copyright">© <span id="year"></span> Beads & Blooms · Handcrafted with love.</div>
- </div>
-</footer>
-
+<footer><div class="container"><div class="footer-brand">beads & blooms</div><p class="footer-tagline">Little beads. Lovely things. Made with love.</p><div class="footer-links"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Our story</a><a href="#contact">Contact</a><a href="https://www.instagram.com/beads._.blooms0/" target="_blank" rel="noopener">Instagram ↗</a></div><div class="copyright">© <span id="year"></span> Beads & Blooms · Handcrafted with love.</div></div></footer>
 <div class="overlay" id="overlay" onclick="closePanels()" aria-hidden="true"></div>
-
-<aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-modal="true">
- <div class="drawer-head">
-  <h2>Your bag <span id="drawerCount" style="font:12px var(--sans)">(0)</span></h2>
-  <button class="close-btn" onclick="closePanels()" aria-label="Close shopping bag">×</button>
- </div>
- <div id="cartItems"></div>
- <div class="cart-summary" id="cartSummary" hidden>
-  <div class="total-row"><span>Subtotal</span><span id="cartTotal">₹0</span></div>
-  <button class="checkout-btn" onclick="checkout()">CONTINUE ON WHATSAPP ↗</button>
-  <p class="cart-disclaimer">Your order is not confirmed until the seller responds. Shipping charges, product availability and payment details will be confirmed on WhatsApp. This website does not process payments.</p>
- </div>
-</aside>
-
-<aside class="drawer" id="wishlistDrawer" aria-label="Wishlist">
- <div class="drawer-head">
-  <h2>Your favourites ♡</h2>
-  <button class="close-btn" onclick="closePanels()" aria-label="Close wishlist">×</button>
- </div>
- <div id="wishlistItems"></div>
-</aside>
-
-<div class="overlay" id="modalOverlay" onclick="closeModal()" aria-hidden="true"></div>
-<section class="modal" id="quickModal" role="dialog" aria-modal="true" aria-label="Product details">
- <button class="modal-close" onclick="closeModal()" aria-label="Close product details">×</button>
- <div class="modal-grid" id="modalContent"></div>
-</section>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
+<aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-modal="true"><div class="drawer-head"><h2>Your bag <span id="drawerCount" style="font:12px var(--sans)">(0)</span></h2><button class="close-btn" onclick="closePanels()" aria-label="Close shopping bag">×</button></div><div id="cartItems"></div><div class="cart-summary" id="cartSummary" hidden><div class="total-row"><span>Subtotal</span><span id="cartTotal">₹0</span></div><button class="checkout-btn" onclick="checkout()">CONTINUE ON WHATSAPP ↗</button><p class="cart-disclaimer">Your order is not confirmed until the seller responds. Shipping charges, product availability and payment details will be confirmed on WhatsApp. This website does not process payments.</p></div></aside>
+<aside class="drawer" id="wishlistDrawer" aria-label="Wishlist"><div class="drawer-head"><h2>Your favourites ♡</h2><button class="close-btn" onclick="closePanels()" aria-label="Close wishlist">×</button></div><div id="wishlistItems"></div></aside>
+<div class="overlay" id="modalOverlay" onclick="closeModal()" aria-hidden="true"></div><section class="modal" id="quickModal" role="dialog" aria-modal="true" aria-label="Product details"><button class="modal-close" onclick="closeModal()" aria-label="Close product details">×</button><div class="modal-grid" id="modalContent"></div></section><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 "use strict";
-
-const WHATSAPP_NUMBER = "918303993262";
-const INSTAGRAM_URL = "https://www.instagram.com/beads._.blooms0/";
-
-/* Replace example prices with the seller's confirmed prices. */
-const products = [
- {
-  id:1, name:"Pearl Bow Handbag", category:"Bags",
-  price:1499, label:"Pearl collection",
-  description:"A pearl-beaded handbag finished with a delicate black bow.",
-  image:"images/pearl-bow-handbag-model.png"
- },
- {
-  id:2, name:"Pastel Beaded Clutch", category:"Clutches",
-  price:1299, label:"Pastel favourite",
-  description:"A playful mix of pastel beads for your special moments.",
-  image:"images/pastel-multicolor-beaded-clutch.png"
- },
- {
-  id:3, name:"Black Beaded Handbag", category:"Bags",
-  price:1799, label:"Statement piece",
-  description:"Black beadwork with intricate silver detailing.",
-  image:"images/black-silver-pattern-beaded-bag.png"
- },
- {
-  id:4, name:"Floral Pearl Bracelet", category:"Bracelets",
-  price:299, label:"Little bloom",
-  description:"A floral bracelet with colourful beads and pearl accents.",
-  image:"images/floral-pearl-beaded-bracelet.png.png"
- },
- {
-  id:5, name:"Black Beaded Keychain", category:"Accessories",
-  price:199, label:"Little keepsake",
-  description:"A black beaded charm with a metal key ring.",
-  image:"images/black-beaded-keychain.png"
- }
-];
-
-let activeCategory = "All";
-let searchQuery = "";
-let sortMode = "featured";
-let cart = [];
-let wishlist = [];
-let toastTimer;
-
-const $ = id => document.getElementById(id);
-const money = value => "₹" + value.toLocaleString("en-IN");
-
-function safeLoad(key) {
- try {
-  const value = JSON.parse(localStorage.getItem(key) || "[]");
-  return Array.isArray(value) ? value : [];
- } catch {
-  return [];
- }
-}
-
-function saveState() {
- try {
-  localStorage.setItem("bb-cart", JSON.stringify(cart));
-  localStorage.setItem("bb-wishlist", JSON.stringify(wishlist));
- } catch {}
-}
-
-function initState() {
- cart = safeLoad("bb-cart").filter(item =>
-  products.some(p => p.id === item.id) &&
-  Number.isInteger(item.qty) && item.qty > 0 && item.qty < 100
- );
- wishlist = [...new Set(safeLoad("bb-wishlist").filter(id =>
-  Number.isInteger(id) && products.some(p => p.id === id)
- ))];
-}
-
-function escapeHTML(value) {
- return String(value).replace(/[&<>"']/g, char => ({
-  "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
- }[char]));
-}
-
-function renderProducts() {
- let list = products.filter(product => {
-  const categoryMatch = activeCategory === "All" ||
-   product.category === activeCategory;
-  const text = (product.name + " " + product.category + " " + product.description).toLowerCase();
-  return categoryMatch && text.includes(searchQuery.toLowerCase());
- });
-
- if (sortMode === "low") list.sort((a,b) => a.price-b.price);
- if (sortMode === "high") list.sort((a,b) => b.price-a.price);
- if (sortMode === "az") list.sort((a,b) => a.name.localeCompare(b.name));
-
- $("resultCount").textContent = `${list.length} ${list.length === 1 ? "piece" : "pieces"} to discover`;
-
- if (!list.length) {
-  $("products").innerHTML = `<div class="empty-results">No little favourites found.<br><span style="font:11px var(--sans)">Try another search or category.</span></div>`;
-  return;
- }
-
- $("products").innerHTML = list.map(product => `
-  <article class="product-card reveal">
-   <div class="product-photo">
-    <img src="${product.image}" alt="${escapeHTML(product.name)}" loading="lazy"
-     onerror="this.onerror=null;this.style.opacity='.25';this.alt='Image unavailable: ${escapeHTML(product.name)}'">
-    <span class="product-tag">${escapeHTML(product.label)}</span>
-    <button class="wish-btn ${wishlist.includes(product.id) ? "on" : ""}"
-     onclick="toggleWish(${product.id})"
-     aria-label="${wishlist.includes(product.id) ? "Remove from" : "Add to"} favourites"
-     aria-pressed="${wishlist.includes(product.id)}">${wishlist.includes(product.id) ? "♥" : "♡"}</button>
-    <button class="quick-view" onclick="quickView(${product.id})">QUICK VIEW</button>
-   </div>
-   <div class="product-info">
-    <span class="product-category">${escapeHTML(product.category)}</span>
-    <h3>${escapeHTML(product.name)}</h3>
-    <p>${escapeHTML(product.description)}</p>
-    <div class="product-bottom">
-     <span class="product-price">${money(product.price)}</span>
-     <button class="add-btn" onclick="addToCart(${product.id})">＋ Add to bag</button>
-    </div>
-   </div>
-  </article>
- `).join("");
-}
-
-function setCategory(category) {
- activeCategory = category;
- document.querySelectorAll(".filter").forEach(button => {
-  const active = button.dataset.category === category;
-  button.classList.toggle("active", active);
-  button.setAttribute("aria-pressed", String(active));
- });
- renderProducts();
-}
-
-function addToCart(id) {
- const product = products.find(p => p.id === id);
- if (!product) return;
- const existing = cart.find(item => item.id === id);
- if (existing) existing.qty = Math.min(existing.qty + 1, 99);
- else cart.push({id,qty:1});
- saveState();
- renderCart();
- showToast(product.name + " added to your bag ♡");
-}
-
-function changeQty(id, amount) {
- const item = cart.find(item => item.id === id);
- if (!item) return;
- item.qty += amount;
- cart = cart.filter(item => item.qty > 0);
- saveState();
- renderCart();
-}
-
-function removeCartItem(id) {
- cart = cart.filter(item => item.id !== id);
- saveState();
- renderCart();
- showToast("Item removed from your bag");
-}
-
-function renderCart() {
- const count = cart.reduce((sum,item) => sum + item.qty, 0);
- $("cartCount").textContent = count;
- $("drawerCount").textContent = "(" + count + ")";
-
- const validItems = cart.map(item => ({
-  ...item, product:products.find(p => p.id === item.id)
- })).filter(item => item.product);
-
- $("cartSummary").hidden = validItems.length === 0;
-
- if (!validItems.length) {
-  $("cartItems").innerHTML = `
-   <div class="cart-empty">
-    <div class="empty-icon">♡</div>
-    <h3>Your bag is waiting</h3>
-    <p>Find a handmade favourite to get started.</p>
-    <button class="btn" onclick="closePanels();document.getElementById('shop').scrollIntoView()">Explore collection</button>
-   </div>`;
-  return;
- }
-
- $("cartItems").innerHTML = validItems.map(item => `
-  <div class="cart-line">
-   <img src="${item.product.image}" alt="${escapeHTML(item.product.name)}">
-   <div class="cart-line-info">
-    <h4>${escapeHTML(item.product.name)}</h4>
-    <div class="cart-line-price">${money(item.product.price * item.qty)}</div>
-    <div class="quantity">
-     <button onclick="changeQty(${item.id},-1)" aria-label="Decrease quantity">−</button>
-     <span>${item.qty}</span>
-     <button onclick="changeQty(${item.id},1)" aria-label="Increase quantity">+</button>
-    </div>
-   </div>
-   <button class="remove-btn" onclick="removeCartItem(${item.id})">Remove</button>
-  </div>
- `).join("");
-
- const total = validItems.reduce((sum,item) => sum + item.product.price*item.qty, 0);
- $("cartTotal").textContent = money(total);
-}
-
-function toggleWish(id) {
- if (wishlist.includes(id)) {
-  wishlist = wishlist.filter(item => item !== id);
-  showToast("Removed from favourites");
- } else {
-  wishlist.push(id);
-  showToast("Saved to your favourites ♡");
- }
- saveState();
- renderProducts();
- renderWishlist();
-}
-
-function renderWishlist() {
- const items = wishlist.map(id => products.find(p => p.id === id)).filter(Boolean);
- if (!items.length) {
-  $("wishlistItems").innerHTML = `<div class="cart-empty"><div class="empty-icon">♡</div><h3>No favourites yet</h3><p>Tap the heart on any product to save it here.</p></div>`;
-  return;
- }
- $("wishlistItems").innerHTML = items.map(product => `
-  <div class="cart-line">
-   <img src="${product.image}" alt="${escapeHTML(product.name)}">
-   <div class="cart-line-info">
-    <h4>${escapeHTML(product.name)}</h4>
-    <div class="cart-line-price">${money(product.price)}</div>
-    <button class="add-btn" style="margin-top:9px" onclick="addToCart(${product.id})">Add to bag +</button>
-   </div>
-   <button class="remove-btn" onclick="toggleWish(${product.id})">Remove</button>
-  </div>
- `).join("");
-}
-
-function checkout() {
- if (!cart.length) return;
- const lines = cart.map(item => {
-  const product = products.find(p => p.id === item.id);
-  return product ? `${product.name} x ${item.qty} — ${money(product.price*item.qty)}` : null;
- }).filter(Boolean);
-
- if (!lines.length) return;
-
- const total = cart.reduce((sum,item) => {
-  const product = products.find(p => p.id === item.id);
-  return sum + (product ? product.price*item.qty : 0);
- },0);
-
- const message = "Hello Beads & Blooms! ♡ I'd like to enquire about this order:\n\n" +
-  lines.join("\n") + "\n\nSubtotal: " + money(total) +
-  "\n\nPlease confirm availability, final price, shipping charges and payment details.";
-
- window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener");
-}
-
-function showPanel(id) {
- closePanels();
- $("overlay").classList.add("show");
- $(id).classList.add("open");
- document.body.classList.add("lock");
- $("overlay").setAttribute("aria-hidden","false");
-}
-
-function openCart() { renderCart(); showPanel("cartDrawer"); }
-function openWishlist() { renderWishlist(); showPanel("wishlistDrawer"); }
-
-function closePanels() {
- $("overlay").classList.remove("show");
- $("cartDrawer").classList.remove("open");
- $("wishlistDrawer").classList.remove("open");
- document.body.classList.remove("lock");
- $("overlay").setAttribute("aria-hidden","true");
-}
-
-function quickView(id) {
- const product = products.find(p => p.id === id);
- if (!product) return;
-
- $("modalContent").innerHTML = `
-  <img src="${product.image}" alt="${escapeHTML(product.name)}">
-  <div class="modal-info">
-   <span class="eyebrow">${escapeHTML(product.category)}</span>
-   <h2>${escapeHTML(product.name)}</h2>
-   <div class="modal-price">${money(product.price)}</div>
-   <p>${escapeHTML(product.description)}</p>
-   <p>Want to know the current availability or request more details? Add this piece to your bag or message us directly.</p>
-   <button class="btn btn-dark" onclick="addToCart(${product.id});closeModal()">Add to bag +</button>
-   <p style="font-size:10px">Sample price; confirm before ordering.</p>
-  </div>`;
-
- $("overlay").classList.remove("show");
- $("modalOverlay").classList.add("show");
- $("quickModal").classList.add("open");
- document.body.classList.add("lock");
-}
-
-function closeModal() {
- $("quickModal").classList.remove("open");
- $("modalOverlay").classList.remove("show");
- if (!$("cartDrawer").classList.contains("open") && !$("wishlistDrawer").classList.contains("open")) {
-  document.body.classList.remove("lock");
- }
-}
-
-function toggleMenu() {
- const nav = $("navLinks");
- const open = nav.classList.toggle("mobile-open");
- $("menuBtn").setAttribute("aria-expanded",String(open));
- $("menuBtn").textContent = open ? "×" : "☰";
-}
-
-function showToast(message) {
- const toast = $("toast");
- toast.textContent = message;
- toast.classList.add("show");
- clearTimeout(toastTimer);
- toastTimer = setTimeout(() => toast.classList.remove("show"),2200);
-}
-
-$("filters").addEventListener("click",event => {
- const button = event.target.closest("[data-category]");
- if (button) setCategory(button.dataset.category);
-});
-
-$("searchInput").addEventListener("input",event => {
- searchQuery = event.target.value.trim();
- renderProducts();
-});
-
-$("sortSelect").addEventListener("change",event => {
- sortMode = event.target.value;
- renderProducts();
-});
-
-$("navLinks").addEventListener("click",event => {
- if (event.target.closest("a")) {
-  $("navLinks").classList.remove("mobile-open");
-  $("menuBtn").setAttribute("aria-expanded","false");
-  $("menuBtn").textContent = "☰";
- }
-});
-
-$("modalOverlay").addEventListener("click",closeModal);
-
-document.addEventListener("keydown",event => {
- if (event.key === "Escape") {
-  closePanels();
-  closeModal();
-  $("navLinks").classList.remove("mobile-open");
-  $("menuBtn").setAttribute("aria-expanded","false");
-  $("menuBtn").textContent = "☰";
- }
-});
-
-$("year").textContent = new Date().getFullYear();
-initState();
-renderProducts();
-renderCart();
-renderWishlist();
+document.documentElement.classList.add("js-motion");
+const WHATSAPP_NUMBER="918303993262";
+const products=[
+{id:1,name:"Pearl Bow Handbag",category:"Bags",price:1499,label:"Pearl collection",description:"A pearl-beaded handbag finished with a delicate black bow.",image:"images/white-pearl-beaded-handbag.png"},
+{id:2,name:"Pastel Beaded Clutch",category:"Clutches",price:1299,label:"Pastel favourite",description:"A playful mix of pastel beads for your special moments.",image:"images/pastel-multicolor-beaded-clutch.png"},
+{id:3,name:"Black Beaded Handbag",category:"Bags",price:1799,label:"Statement piece",description:"Black beadwork with intricate silver detailing.",image:"images/black-silver-pattern-beaded-bag.png"},
+{id:4,name:"Floral Pearl Bracelet",category:"Bracelets",price:299,label:"Little bloom",description:"A floral bracelet with colourful beads and pearl accents.",image:"images/floral-pearl-beaded-bracelet.png"},
+{id:5,name:"Black Beaded Keychain",category:"Accessories",price:199,label:"Little keepsake",description:"A black beaded charm with a metal key ring.",image:"images/black-beaded-keychain.png"}];
+let activeCategory="All",searchQuery="",sortMode="featured",cart=[],wishlist=[],toastTimer,productObserver,sectionObserver;
+const $=id=>document.getElementById(id),money=value=>"₹"+value.toLocaleString("en-IN");
+function safeLoad(key){try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
+function saveState(){try{localStorage.setItem("bb-cart",JSON.stringify(cart));localStorage.setItem("bb-wishlist",JSON.stringify(wishlist))}catch{}}
+function initState(){cart=safeLoad("bb-cart").filter(i=>products.some(p=>p.id===i.id)&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<100);wishlist=[...new Set(safeLoad("bb-wishlist").filter(id=>Number.isInteger(id)&&products.some(p=>p.id===id)))]}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function observeCards(){if(!productObserver)return;document.querySelectorAll("#products .product-card:not([data-observed])").forEach((el,i)=>{el.dataset.observed="1";el.style.transitionDelay=(i%3)*70+"ms";productObserver.observe(el)})}
+function renderProducts(){let list=products.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&(p.name+" "+p.category+" "+p.description).toLowerCase().includes(searchQuery.toLowerCase()));if(sortMode==="low")list.sort((a,b)=>a.price-b.price);if(sortMode==="high")list.sort((a,b)=>b.price-a.price);if(sortMode==="az")list.sort((a,b)=>a.name.localeCompare(b.name));$("resultCount").textContent=`${list.length} ${list.length===1?"piece":"pieces"} to discover`;if(!list.length){$("products").innerHTML='<div class="empty-results">No little favourites found.<br><span style="font:11px var(--sans)">Try another search or category.</span></div>';return}
+$("products").innerHTML=list.map(p=>`<article class="product-card"><div class="product-photo"><img src="${p.image}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.style.opacity='.25';this.alt='Image unavailable: ${esc(p.name)}'"><span class="product-tag">${esc(p.label)}</span><button class="wish-btn ${wishlist.includes(p.id)?"on":""}" onclick="toggleWish(${p.id})" aria-label="${wishlist.includes(p.id)?"Remove from":"Add to"} favourites" aria-pressed="${wishlist.includes(p.id)}">${wishlist.includes(p.id)?"♥":"♡"}</button><button class="quick-view" onclick="quickView(${p.id})">QUICK VIEW</button></div><div class="product-info"><span class="product-category">${esc(p.category)}</span><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p><div class="product-bottom"><span class="product-price">${money(p.price)}</span><button class="add-btn" onclick="addToCart(${p.id})">＋ Add to bag</button></div></div></article>`).join("");observeCards()}
+function setCategory(c){activeCategory=c;document.querySelectorAll(".filter").forEach(b=>{b.classList.toggle("active",b.dataset.category===c);b.setAttribute("aria-pressed",String(b.dataset.category===c))});renderProducts()}
+function bumpCart(){const e=$("cartCount");e.classList.remove("bump");void e.offsetWidth;e.classList.add("bump")}
+function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const item=cart.find(x=>x.id===id);if(item)item.qty=Math.min(item.qty+1,99);else cart.push({id,qty:1});saveState();renderCart();bumpCart();showToast(p.name+" added to your bag ♡")}
+function changeQty(id,n){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=n;cart=cart.filter(x=>x.qty>0);saveState();renderCart()}
+function removeCartItem(id){cart=cart.filter(x=>x.id!==id);saveState();renderCart();showToast("Item removed from your bag")}
+function renderCart(){const count=cart.reduce((s,i)=>s+i.qty,0);$("cartCount").textContent=count;$("drawerCount").textContent="("+count+")";const items=cart.map(i=>({...i,p:products.find(p=>p.id===i.id)})).filter(i=>i.p);$("cartSummary").hidden=!items.length;if(!items.length){$("cartItems").innerHTML='<div class="cart-empty"><div class="empty-icon">♡</div><h3>Your bag is waiting</h3><p>Find a handmade favourite to get started.</p><button class="btn" onclick="closePanels();document.getElementById(\'shop\').scrollIntoView()">Explore collection</button></div>';return}$("cartItems").innerHTML=items.map(i=>`<div class="cart-line"><img src="${i.p.image}" alt="${esc(i.p.name)}"><div class="cart-line-info"><h4>${esc(i.p.name)}</h4><div class="cart-line-price">${money(i.p.price*i.qty)}</div><div class="quantity"><button onclick="changeQty(${i.id},-1)" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button onclick="changeQty(${i.id},1)" aria-label="Increase quantity">+</button></div></div><button class="remove-btn" onclick="removeCartItem(${i.id})">Remove</button></div>`).join("");$("cartTotal").textContent=money(items.reduce((s,i)=>s+i.p.price*i.qty,0))}
+function toggleWish(id){wishlist=wishlist.includes(id)?wishlist.filter(x=>x!==id):[...wishlist,id];saveState();renderProducts();renderWishlist();showToast(wishlist.includes(id)?"Saved to your favourites ♡":"Removed from favourites")}
+function renderWishlist(){const items=wishlist.map(id=>products.find(p=>p.id===id)).filter(Boolean);if(!items.length){$("wishlistItems").innerHTML='<div class="cart-empty"><div class="empty-icon">♡</div><h3>No favourites yet</h3><p>Tap the heart on any product to save it here.</p></div>';return}$("wishlistItems").innerHTML=items.map(p=>`<div class="cart-line"><img src="${p.image}" alt="${esc(p.name)}"><div class="cart-line-info"><h4>${esc(p.name)}</h4><div class="cart-line-price">${money(p.price)}</div><button class="add-btn" style="margin-top:9px" onclick="addToCart(${p.id})">Add to bag +</button></div><button class="remove-btn" onclick="toggleWish(${p.id})">Remove</button></div>`).join("")}
+function checkout(){if(!cart.length)return;const lines=cart.map(i=>{const p=products.find(x=>x.id===i.id);return p?`${p.name} x ${i.qty} — ${money(p.price*i.qty)}`:null}).filter(Boolean);if(!lines.length)return;const total=cart.reduce((s,i)=>{const p=products.find(x=>x.id===i.id);return s+(p?p.price*i.qty:0)},0);const msg="Hello Beads & Blooms! ♡ I'd like to enquire about this order:\n\n"+lines.join("\n")+"\n\nSubtotal: "+money(total)+"\n\nPlease confirm availability, final price, shipping charges and payment details.";window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank","noopener")}
+function showPanel(id){closePanels();$("overlay").classList.add("show");$(id).classList.add("open");document.body.classList.add("lock");$("overlay").setAttribute("aria-hidden","false")}
+function openCart(){renderCart();showPanel("cartDrawer")}function openWishlist(){renderWishlist();showPanel("wishlistDrawer")}
+function closePanels(){$("overlay").classList.remove("show");$("cartDrawer").classList.remove("open");$("wishlistDrawer").classList.remove("open");document.body.classList.remove("lock");$("overlay").setAttribute("aria-hidden","true")}
+function quickView(id){const p=products.find(x=>x.id===id);if(!p)return;$("modalContent").innerHTML=`<img src="${p.image}" alt="${esc(p.name)}"><div class="modal-info"><span class="eyebrow">${esc(p.category)}</span><h2>${esc(p.name)}</h2><div class="modal-price">${money(p.price)}</div><p>${esc(p.description)}</p><p>Want to know the current availability or request more details? Add this piece to your bag or message us directly.</p><button class="btn btn-dark" onclick="addToCart(${p.id});closeModal()">Add to bag +</button><p style="font-size:10px">Sample price; confirm before ordering.</p></div>`;$("overlay").classList.remove("show");$("modalOverlay").classList.add("show");$("quickModal").classList.add("open");document.body.classList.add("lock")}
+function closeModal(){$("quickModal").classList.remove("open");$("modalOverlay").classList.remove("show");if(!$("cartDrawer").classList.contains("open")&&!$("wishlistDrawer").classList.contains("open"))document.body.classList.remove("lock")}
+function toggleMenu(){const nav=$("navLinks"),open=nav.classList.toggle("mobile-open");$("menuBtn").setAttribute("aria-expanded",String(open));$("menuBtn").textContent=open?"×":"☰"}
+function showToast(msg){const e=$("toast");e.textContent=msg;e.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove("show"),2200)}
+$("filters").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(b)setCategory(b.dataset.category)});$("searchInput").addEventListener("input",e=>{searchQuery=e.target.value.trim();renderProducts()});$("sortSelect").addEventListener("change",e=>{sortMode=e.target.value;renderProducts()});$("navLinks").addEventListener("click",e=>{if(e.target.closest("a")){$("navLinks").classList.remove("mobile-open");$("menuBtn").setAttribute("aria-expanded","false");$("menuBtn").textContent="☰"}});$("modalOverlay").addEventListener("click",closeModal);document.addEventListener("keydown",e=>{if(e.key==="Escape"){closePanels();closeModal();$("navLinks").classList.remove("mobile-open");$("menuBtn").setAttribute("aria-expanded","false");$("menuBtn").textContent="☰"}});
+$("year").textContent=new Date().getFullYear();initState();renderProducts();renderCart();renderWishlist();
+if("IntersectionObserver"in window&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){productObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in-view");productObserver.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -25px 0px"});sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in-view");sectionObserver.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -25px 0px"});document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach(el=>sectionObserver.observe(el));observeCards()}else{document.querySelectorAll(".reveal,.reveal-left,.reveal-right,.product-card").forEach(el=>el.classList.add("in-view"))}
+const header=$("siteHeader");function updateHeader(){header.classList.toggle("scrolled",window.scrollY>8)}window.addEventListener("scroll",updateHeader,{passive:true});updateHeader();
 </script>
-</body>
-</html>
+</body></html>
